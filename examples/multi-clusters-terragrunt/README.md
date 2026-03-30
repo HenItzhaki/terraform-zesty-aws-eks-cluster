@@ -23,7 +23,7 @@ kompass-eks-prod  kompass-eks-staging
 ## Directory Structure
 
 ```
-examples/terragrunt/
+multi-clusters-terragrunt/
 ├── modules/
 │   └── kompass/                          # local Terraform module for Helm release
 │       ├── main.tf

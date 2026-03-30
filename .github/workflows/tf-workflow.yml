@@ -52,9 +52,11 @@ jobs:
     strategy:
       matrix:
         example:
-          - examples/simple/terraform
-          - examples/multi_clusters/terraform/account
-          - examples/multi_clusters/terraform/kompass
+          - examples/simple-terraform
+          - examples/multi-clusters-terraform/account
+          - examples/multi-clusters-terraform/kompass-eks-prod
+          - examples/multi-clusters-terraform/kompass-eks-staging
+          - examples/multi-clusters-terraform/kompass-eks-data
     steps:
       - uses: actions/checkout@v4
 
@@ -76,9 +78,11 @@ jobs:
     strategy:
       matrix:
         example:
-          - examples/simple/terraform
-          - examples/multi_clusters/terraform/account
-          - examples/multi_clusters/terraform/kompass
+          - examples/simple-terraform
+          - examples/multi-clusters-terraform/account
+          - examples/multi-clusters-terraform/kompass-eks-prod
+          - examples/multi-clusters-terraform/kompass-eks-staging
+          - examples/multi-clusters-terraform/kompass-eks-data
     steps:
       - uses: actions/checkout@v4
 

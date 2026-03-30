@@ -5,7 +5,7 @@ Links your AWS account to Zesty and deploys the Kompass Helm chart into a **sing
 ## Directory Structure
 
 ```
-simple/terragrunt/
+simple-terragrunt/
 ├── modules/kompass/                            # reusable Helm module
 │   ├── main.tf
 │   ├── variables.tf

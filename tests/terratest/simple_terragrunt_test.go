@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestSimpleTerragruntAccount runs the simple/terragrunt/account example.
+// TestSimpleTerragruntAccount runs the simple-terragrunt account layer.
 //
 // Required environment variables:
 //   - ZESTY_API_TOKEN: Zesty API token (set in the generate block)
@@ -21,7 +21,7 @@ import (
 func TestSimpleTerragruntAccount(t *testing.T) {
 	t.Parallel()
 
-	exampleDir := "../../examples/simple/terragrunt/account"
+	exampleDir := "../../examples/simple-terragrunt/live/prod/aws/us-east-1/my-account/zesty/account"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
@@ -39,7 +39,7 @@ func TestSimpleTerragruntAccount(t *testing.T) {
 	assert.NotEmpty(t, kompassValues, "kompass_values_yaml output should not be empty")
 }
 
-// TestSimpleTerragruntKompass runs the simple/terragrunt/kompass example.
+// TestSimpleTerragruntKompass runs the simple-terragrunt kompass layer.
 // Requires the account layer to already be applied.
 //
 // Required environment variables:
@@ -54,7 +54,7 @@ func TestSimpleTerragruntKompass(t *testing.T) {
 	clusterName := os.Getenv("CLUSTER_NAME")
 	require.NotEmpty(t, clusterName, "CLUSTER_NAME environment variable must be set")
 
-	exampleDir := "../../examples/simple/terragrunt/kompass"
+	exampleDir := "../../examples/simple-terragrunt/live/prod/aws/us-east-1/my-account/zesty/kompass"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
@@ -83,7 +83,7 @@ func TestSimpleTerragruntFullE2E(t *testing.T) {
 	require.NotEmpty(t, clusterName, "CLUSTER_NAME environment variable must be set")
 
 	// Step 1: Apply account
-	accountDir := "../../examples/simple/terragrunt/account"
+	accountDir := "../../examples/simple-terragrunt/live/prod/aws/us-east-1/my-account/zesty/account"
 	accountTmpDir, err := files.CopyTerraformFolderToTemp(accountDir, t.Name()+"-account")
 	require.NoError(t, err)
 
@@ -100,7 +100,7 @@ func TestSimpleTerragruntFullE2E(t *testing.T) {
 	assert.NotEmpty(t, kompassValues, "account layer should output kompass_values_yaml")
 
 	// Step 2: Apply kompass
-	kompassDir := "../../examples/simple/terragrunt/kompass"
+	kompassDir := "../../examples/simple-terragrunt/live/prod/aws/us-east-1/my-account/zesty/kompass"
 	kompassTmpDir, err := files.CopyTerraformFolderToTemp(kompassDir, t.Name()+"-kompass")
 	require.NoError(t, err)
 

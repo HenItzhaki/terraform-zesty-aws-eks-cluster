@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestSimpleExample runs a full E2E test of the simple/terraform example.
+// TestSimpleExample runs a full E2E test of the simple-terraform example.
 //
 // Required environment variables:
 //   - CLUSTER_NAME:    EKS cluster name to deploy into
@@ -26,7 +26,7 @@ func TestSimpleExample(t *testing.T) {
 	require.NotEmpty(t, clusterName, "CLUSTER_NAME environment variable must be set")
 
 	// Copy to temp dir so parallel tests don't collide on .terraform/
-	exampleDir := "../../examples/simple/terraform"
+	exampleDir := "../../examples/simple-terraform"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
@@ -58,7 +58,7 @@ func TestSimpleExamplePlanOnly(t *testing.T) {
 	clusterName := os.Getenv("CLUSTER_NAME")
 	require.NotEmpty(t, clusterName, "CLUSTER_NAME environment variable must be set")
 
-	exampleDir := "../../examples/simple/terraform"
+	exampleDir := "../../examples/simple-terraform"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 

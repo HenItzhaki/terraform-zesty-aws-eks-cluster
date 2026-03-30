@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestMultiClusterTerragruntAccount runs the multi_clusters/terragrunt account layer.
+// TestMultiClusterTerragruntAccount runs the multi-clusters-terragrunt account layer.
 //
 // Required environment variables:
 //   - ZESTY_API_TOKEN: Zesty API token
@@ -21,7 +21,7 @@ import (
 func TestMultiClusterTerragruntAccount(t *testing.T) {
 	t.Parallel()
 
-	exampleDir := "../../examples/multi_clusters/terragrunt/live/prod/aws/us-east-1/my-account/zesty/account"
+	exampleDir := "../../examples/multi-clusters-terragrunt/live/prod/aws/us-east-1/my-account/zesty/account"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
@@ -51,7 +51,7 @@ func TestMultiClusterTerragruntAccount(t *testing.T) {
 func TestMultiClusterTerragruntKompassProd(t *testing.T) {
 	t.Parallel()
 
-	exampleDir := "../../examples/multi_clusters/terragrunt/live/prod/aws/us-east-1/my-account/zesty/kompass-eks-prod"
+	exampleDir := "../../examples/multi-clusters-terragrunt/live/prod/aws/us-east-1/my-account/zesty/kompass-eks-prod"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
@@ -80,7 +80,7 @@ func TestMultiClusterTerragruntKompassProd(t *testing.T) {
 func TestMultiClusterTerragruntRunAll(t *testing.T) {
 	_ = os.Getenv("ZESTY_API_TOKEN")
 
-	exampleDir := "../../examples/multi_clusters/terragrunt/live/prod/aws/us-east-1/my-account/zesty"
+	exampleDir := "../../examples/multi-clusters-terragrunt/live/prod/aws/us-east-1/my-account/zesty"
 	tmpDir, err := files.CopyTerraformFolderToTemp(exampleDir, t.Name())
 	require.NoError(t, err)
 
