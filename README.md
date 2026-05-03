@@ -22,13 +22,14 @@ To connect a cluster (optional) as part of the installation, include:
 
 ### Terraform
 
-- [Simple single-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/simple-terraform)
 - [Multi-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/multi-clusters-terraform)
+- [Simple single-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/simple-terraform)
 
 ### Terragrunt
 
-- [Simple single-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/simple-terragrunt)
 - [Multi-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/multi-clusters-terragrunt)
+- [Simple single-cluster example](https://github.com/zesty-co/terraform-zesty-aws-eks-cluster/tree/main/examples/simple-terragrunt)
+
 
 
 ## Kompass Helm Values Reference
